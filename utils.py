@@ -30,3 +30,10 @@ def gen_labels():
     labels = dict((v,k) for k,v in labels.items())
 
     return labels
+
+def preprocess(image):
+    image=np.array(image.resize((300,300),resample=resample_method))
+    image=np.array(image,dtype='uint8')
+    image=np.array(image)/255.0
+
+    return image
